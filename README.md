@@ -2,7 +2,7 @@
 
 > **Pre-alpha: do not store real passwords.** Nothing here has been audited yet, and the infrastructure can still change.
 
-The TLPass infrastructure on AWS, written with the AWS CDK in Go. It defines the dev and prod stacks that run the API: Cognito, DynamoDB, API Gateway, Lambda and their alarms, all in `eu-central-1`.
+The TLPass infrastructure on AWS, written with the AWS CDK in Go. It defines the dev and prod stacks that run the API: Cognito, DynamoDB, API Gateway and Lambda, all in `eu-central-1`.
 
 GitHub Actions deploys it with short-lived OIDC credentials, so no AWS access key is stored anywhere. Dev deploys from `main`; prod deploys only from a release tag after the owner approves.
 
