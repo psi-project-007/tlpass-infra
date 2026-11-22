@@ -26,7 +26,7 @@
         "ssm:DeleteParameter", "ssm:AddTagsToResource", "ssm:RemoveTagsFromResource",
         "ssm:ListTagsForResource"
       ],
-      "Resource": "arn:aws:ssm:eu-central-1:247202965457:parameter/tlpass/*"
+      "Resource": "arn:aws:ssm:eu-central-1:973679386229:parameter/tlpass/*"
     },
     {
       "Sid": "TlpassIam",
@@ -41,15 +41,15 @@
         "iam:ListPolicyVersions"
       ],
       "Resource": [
-        "arn:aws:iam::247202965457:role/tlpass-*",
-        "arn:aws:iam::247202965457:policy/tlpass-*"
+        "arn:aws:iam::973679386229:role/tlpass-*",
+        "arn:aws:iam::973679386229:policy/tlpass-*"
       ]
     },
     {
       "Sid": "CdkAssetsRead",
       "Effect": "Allow",
       "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::cdk-hnb659fds-assets-247202965457-eu-central-1/*"
+      "Resource": "arn:aws:s3:::cdk-hnb659fds-assets-973679386229-eu-central-1/*"
     }
   ]
 }
