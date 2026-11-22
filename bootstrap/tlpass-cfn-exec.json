@@ -1,0 +1,55 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "TlpassServices",
+      "Effect": "Allow",
+      "Action": [
+        "cognito-idp:*",
+        "dynamodb:*",
+        "apigateway:*",
+        "lambda:*",
+        "logs:*",
+        "events:*",
+        "scheduler:*",
+        "acm:*",
+        "cloudformation:*"
+      ],
+      "Resource": "*",
+      "Condition": { "StringEquals": { "aws:RequestedRegion": "eu-central-1" } }
+    },
+    {
+      "Sid": "TlpassParameters",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParameter", "ssm:GetParameters", "ssm:PutParameter",
+        "ssm:DeleteParameter", "ssm:AddTagsToResource", "ssm:RemoveTagsFromResource",
+        "ssm:ListTagsForResource"
+      ],
+      "Resource": "arn:aws:ssm:eu-central-1:247202965457:parameter/tlpass/*"
+    },
+    {
+      "Sid": "TlpassIam",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetRole", "iam:CreateRole", "iam:DeleteRole", "iam:UpdateRole",
+        "iam:UpdateAssumeRolePolicy", "iam:TagRole", "iam:UntagRole", "iam:PassRole",
+        "iam:PutRolePolicy", "iam:GetRolePolicy", "iam:DeleteRolePolicy",
+        "iam:AttachRolePolicy", "iam:DetachRolePolicy",
+        "iam:GetPolicy", "iam:CreatePolicy", "iam:DeletePolicy",
+        "iam:GetPolicyVersion", "iam:CreatePolicyVersion", "iam:DeletePolicyVersion",
+        "iam:ListPolicyVersions"
+      ],
+      "Resource": [
+        "arn:aws:iam::247202965457:role/tlpass-*",
+        "arn:aws:iam::247202965457:policy/tlpass-*"
+      ]
+    },
+    {
+      "Sid": "CdkAssetsRead",
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::cdk-hnb659fds-assets-247202965457-eu-central-1/*"
+    }
+  ]
+}
