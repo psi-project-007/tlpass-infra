@@ -50,6 +50,12 @@
       "Effect": "Allow",
       "Action": "s3:GetObject",
       "Resource": "arn:aws:s3:::cdk-hnb659fds-assets-973679386229-eu-central-1/*"
+    },
+    {
+      "Sid": "CdkBootstrapVersionRead",
+      "Effect": "Allow",
+      "Action": ["ssm:GetParameter", "ssm:GetParameters"],
+      "Resource": "arn:aws:ssm:eu-central-1:973679386229:parameter/cdk-bootstrap/hnb659fds/version"
     }
   ]
 }
